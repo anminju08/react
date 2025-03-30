@@ -1,0 +1,22 @@
+import { useState } from "react";
+
+export default function Counter() {
+    const [count, setCount] = useState(0);
+
+    const increase = () => {
+        setCount((prev) => (prev < 10 ? prev + 1 : prev));
+        // 10 을 초과하는지 확인 후 오르게 하기
+    };
+
+    const decrease = () => {
+        setCount((prev) => (prev > 0 ? prev - 1 : prev));
+        // 0 보다 작아지지 않는지 확인
+    };
+
+    return (
+        <div>
+        <button onClick={decrease} >-</button>
+        <span>{count}</span>
+        <button onClick={increase}>+</button>
+        </div>
+    );}
