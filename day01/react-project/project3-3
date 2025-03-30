@@ -1,0 +1,16 @@
+import { useState } from "react";
+
+export default function VoteButtons() {
+    const [upvotes, setUpvotes] = useState(0);
+    const [downvotes, setDownvotes] = useState(0);
+
+    return (
+        <div className="">
+        <button onClick={() => setUpvotes(upvotes + 1)}>👍 {upvotes}</button>
+        <button onClick={() => setDownvotes(downvotes + 1)}>
+            // 투표 하면 값이 1씩 오르도록 
+            👎 {downvotes}
+        </button>
+        </div>
+    );
+}
