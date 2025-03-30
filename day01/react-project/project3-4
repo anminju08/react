@@ -1,0 +1,35 @@
+import { useState } from "react";
+
+    export default function Checklist() {
+    const items = ["공부하기", "청소하기", "운동하기"];
+    const [checkedItems, setCheckedItems] = useState([]);
+
+    const toggleCheck = (item) => {
+        setCheckedItems((prev) =>
+        prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item]
+        // 필터로 체크표시 
+        );
+    };
+
+    return (
+        <div>
+        {items.map((item) => (
+            <label key={item}>
+            <input
+                type="checkbox"
+                checked={checkedItems.includes(item)}
+                onChange={() => toggleCheck(item)}
+            />
+            <span
+                style={{
+                fontWeight: checkedItems.includes(item) ? "bold" : "normal",
+                // 체크 시 글씨체 볼드 바꾸기
+                }}
+            >
+                {item}
+            </span>
+            </label>
+        ))}
+        </div>
+    );
+    }
