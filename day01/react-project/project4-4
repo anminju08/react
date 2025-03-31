@@ -1,0 +1,27 @@
+// ✅ 문제 4: 사용자 나이 증가시키기
+// 버튼 클릭 시 user.age를 1 증가시키세요.
+
+import React, { useState } from 'react';
+
+function App() {
+  const [user, setUser] = useState({
+    name: 'Jane',
+    age: 20,
+  });
+
+  const handleAgeUp = () => {
+   setUser(prevUser => ({
+    ...prevUser,
+    age: prevUser.age+1,
+   })); // TODO: user 객체 복사 후 age를 1 증가
+  };
+
+  return (
+    <div>
+      <p>{user.name} ({user.age}세)</p>
+      <button onClick={handleAgeUp}>나이 증가</button>
+    </div>
+  );
+}
+
+export default App;
