@@ -1,0 +1,22 @@
+import React, { useState } from 'react';
+
+function App() {
+  const [animals, setAnimals] = useState(['dog', 'cat', 'bird']);
+
+  const handleRemoveCat = () => {
+    setAnimals(prevAnimals => prevAnimals.filter(animal => animal !== 'cat'));
+  };
+
+  return (
+    <div>
+      <button onClick={handleRemoveCat}>고양이 제거</button>
+      <ul>
+        {animals.map((animal, index) => (
+          <li key={index}>{animal}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
