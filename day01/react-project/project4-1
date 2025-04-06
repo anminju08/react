@@ -1,0 +1,25 @@
+import React, { useState } from 'react';
+
+function App() {
+  const [user, setUser] = useState({
+    name: 'John',
+    age: 18,
+  });
+
+  const handleClick = () => {
+    setUser({
+      ...user,
+      name: 'Peter',
+    });
+  };
+
+  return (
+    <div>
+      <p>이름: {user.name}</p>
+      <p>나이: {user.age}</p>
+      <button onClick={handleClick}>이름 변경</button>
+    </div>
+  );
+}
+
+export default App;
