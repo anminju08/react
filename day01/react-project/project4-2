@@ -1,0 +1,22 @@
+import React, { useState } from 'react';
+
+function App() {
+  const [cart, setCart] = useState([]);
+
+  const handleAddApple = () => {
+    setCart([...cart, '사과']);
+  };
+
+  return (
+    <div>
+      <button onClick={handleAddApple}>사과 추가</button>
+      <ul>
+        {cart.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
