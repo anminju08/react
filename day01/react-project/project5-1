@@ -1,0 +1,28 @@
+import { useRef } from "react";
+
+export default function ColorBox() {
+  const boxRef = useRef(null);
+
+  const changeColor = () => {
+    if (boxRef.current) {
+      boxRef.current.style.backgroundColor = "green";
+    }
+  };
+
+  return (
+    <>
+      <button onClick={changeColor}>배경색 바꾸기</button>
+      <div
+        ref={boxRef}
+        style={{
+          width: "200px",
+          height: "100px",
+          marginTop: "10px",
+          backgroundColor: "lightgray",
+        }}
+      >
+        나는 박스입니다
+      </div>
+    </>
+  );
+}
