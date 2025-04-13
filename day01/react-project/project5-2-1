@@ -1,0 +1,10 @@
+import { useEffect } from 'react';
+
+export default function Welcome() {
+    useEffect (() => {
+        console.log("환영합니다!")
+    });
+  // TODO: 컴포넌트가 처음 렌더링될 때 콘솔에 "환영합니다!" 출력
+
+    return <h1>Welcome Page</h1>;
+}
