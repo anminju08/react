@@ -1,0 +1,23 @@
+import React, { useState } from 'react';
+
+function App() {
+  const [animals, setAnimals] = useState(['dog', 'cat', 'bird']);
+
+  const handleRemoveCat = () => {
+    // "cat"을 제외한 배열로 업데이트
+    setAnimals(prev => prev.filter(animal => animal !== 'cat'));
+  };
+
+  return (
+    <div>
+      <button onClick={handleRemoveCat}>고양이 제거</button>
+      <ul>
+        {animals.map((animal, index) => (
+          <li key={index}>{animal}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
